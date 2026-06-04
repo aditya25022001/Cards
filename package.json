@@ -1,0 +1,17 @@
+{
+  "name": "cards",
+  "version": "1.0.0",
+  "description": "Multiplayer cards game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd cards-backend && nodemon server.js",
+    "client": "cd cards-frontend && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Aditya Ubale",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^10.0.1"
+  }
+}

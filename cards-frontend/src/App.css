@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Bingbam';
+  src: url('./assets/BingbamDemoRegular-wop79.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+img{
+  border:2px solid black;
+  border-radius: 9px;
+  padding: 10px;
+  margin: 11px;
+  height: 200px;
+}
+.nav-link:not(:last-child){
+  margin-right:30px
+}
+.playCard:hover{
+  scale: 1.01;
+  transition: all 0.2s ease-in-out;
+}
+.gameCardImage{
+  background-size: cover;
+  background-position: center;
+  height: 17rem;
+  padding: 8px 0px 0px 15px;
+  border-radius: 8px 8px 0px 0px;
+  text-shadow: 4px 4px 2px black;
+  font-family: 'Bingbam';
+  color: rgba(255, 99, 27, 1);
+  font-size: 3.25rem;
+}
