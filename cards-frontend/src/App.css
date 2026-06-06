@@ -4,6 +4,10 @@
   font-weight: normal;
   font-style: normal;
 }
+a{
+  text-decoration: none;
+  color: whitesmoke;
+}
 img{
   border:2px solid black;
   border-radius: 9px;
@@ -28,4 +32,22 @@ img{
   font-family: 'Bingbam';
   color: rgba(255, 99, 27, 1);
   font-size: 3.25rem;
+}
+.gameBoard{
+  background-image: url('./assets/gameBoard.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh
+}
+.menuIconBack{
+  position: fixed; 
+  height:100vh; 
+  left:0; 
+  width:2rem; 
+  z-index:1000;
+  padding-left:0.7rem; 
+}
+.menuIconHeader{
+  font-size: 2rem;
+  cursor: pointer;
 }

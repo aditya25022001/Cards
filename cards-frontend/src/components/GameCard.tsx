@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 const GameCard = (props: GameCardProps) => {
   const { name, description, image } = props;
     return (
-    <Card style={{ width: '22rem', borderRadius:'8px' }} className="gameCard d-flex flex-column justify-content-between">
+    <Card style={{ width: '28rem', borderRadius:'8px' }} className="gameCard d-flex flex-column justify-content-between">
       <div className="gameCardImage" style={{ backgroundImage: `url(${image})` }}>
         {name}
       </div>

@@ -1,20 +1,39 @@
-import { Navbar, Nav } from 'react-bootstrap'
+import { useState } from 'react';
+import { Offcanvas } from 'react-bootstrap'
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  
+  const navigator = useNavigate();
+
+  const [show, setShow] = useState<boolean>(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const navigate = (location: string) => {
+    handleClose();
+    navigator(location);
+  }
+  
   return (
-      <Navbar collapseOnSelect expand="lg" className="border-bottom px-4 mb-2">
-        <Navbar.Brand href="/">Cards</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="/games">Games</Nav.Link>
-            <Nav.Link href="/features">Features</Nav.Link>
-            <Nav.Link href="/pricing">Pricing</Nav.Link>
-            <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
-            <Nav.Link eventKey={2} href="/login">Login</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+    <>
+      <div className='menuIconBack'>
+        <i onClick={handleShow} className="menuIconHeader bi bi-list"></i>
+      </div>
+      <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Cards</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body className="d-flex flex-column gap-3">
+          <Link to="/" onClick={() => navigate('/')}>Home</Link>
+          <Link to="/game" onClick={() => navigate('/game')}>Games</Link>
+          <Link to="/features" onClick={() => navigate('/features')}>Features</Link>
+          <Link to="/pricing" onClick={() => navigate('/pricing')}>Pricing</Link>
+          <Link to="/leaderboard" onClick={() => navigate('/leaderboard')}>Leaderboard</Link>
+          <Link to="/login" onClick={() => navigate('/login')}>Login</Link>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
   )
 }
 
